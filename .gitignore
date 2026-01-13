@@ -1,5 +1,6 @@
-# Ignore everything except releases
+# Ignore everything except releases and SPM files
 *
 !.gitignore
 !README.md
+!Package.swift
 !*.zip
