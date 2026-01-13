@@ -1,0 +1,5 @@
+# Ignore everything except releases
+*
+!.gitignore
+!README.md
+!*.zip
