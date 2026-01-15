@@ -1,21 +1,23 @@
 # PSA iOS SDK - Binary Releases
 
-This repository hosts binary releases for PSA iOS SDK, supporting both CocoaPods and Swift Package Manager (SPM).
+Binary distribution repository for PSA iOS SDK, supporting CocoaPods and Swift Package Manager.
+
+## Current Version: 1.0.4
 
 ## Installation
 
 ### CocoaPods
 
-Add to your `Podfile`:
-
 ```ruby
-pod 'PSAiOSSDK', '~> 1.0.0'
-```
+# Umbrella pod (includes Core, Messaging, Tracker)
+pod 'PSAiOSSDK', '~> 1.0.4'
 
-Then run:
-
-```bash
-pod install
+# Or individual modules
+pod 'PSACore', '~> 1.0.4'
+pod 'PSAMessaging', '~> 1.0.4'
+pod 'PSATracker', '~> 1.0.4'
+pod 'PSANotificationService', '~> 1.0.4'
+pod 'PSANotificationContent', '~> 1.0.4'
 ```
 
 ### Swift Package Manager
@@ -24,39 +26,31 @@ Add to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ProemSportsAnalytics/psa-ios-sdk-releases.git", from: "1.0.0")
+    .package(url: "https://github.com/ProemSportsAnalytics/psa-ios-sdk-releases.git", from: "1.0.4")
 ]
 ```
 
-Or in Xcode:
-1. File → Add Packages...
-2. Enter: `https://github.com/ProemSportsAnalytics/psa-ios-sdk-releases.git`
-3. Select version
-
-Then import in your code:
-
-```swift
-import PSACore
-import PSAMessaging
-import PSATracker
-```
+Or in Xcode: File → Add Packages... → Enter URL above
 
 ## Available Modules
 
-- **PSACore** - Core SDK functionality
-- **PSAMessaging** - Push notification handling
-- **PSATracker** - Analytics and event tracking
-- **PSANotificationService** - Notification service extension
-- **PSANotificationContent** - Notification content extension
+| Module | Description |
+|--------|-------------|
+| **PSACore** | Core SDK - initialization, user management |
+| **PSAMessaging** | Push notification handling |
+| **PSATracker** | Analytics and event tracking |
+| **PSANotificationService** | Notification service extension |
+| **PSANotificationContent** | Custom notification UI |
+
+## Architecture Support
+
+- iOS device: `arm64`
+- iOS Simulator: `arm64` + `x86_64`
 
 ## Documentation
 
-For full documentation and integration guides, please contact support or visit our documentation portal.
-
-## License
-
-[Your License Information]
+See [psa-ios-sdk](https://github.com/ProemSportsAnalytics/psa-ios-sdk) for full documentation.
 
 ## Support
 
-For issues, questions, or support, please contact: support@proemsportsanalytics.com
+Email: support@proemsportsanalytics.com

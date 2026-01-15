@@ -1,75 +1,45 @@
 // swift-tools-version:5.7
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "PSAiOSSDK",
     platforms: [
-        .iOS(.v13),
-        .macOS(.v10_15),
-        .tvOS(.v13),
-        .watchOS(.v6)
+        .iOS(.v13)
     ],
     products: [
-        // Main SDK products
-        .library(
-            name: "PSACore",
-            targets: ["PSACore"]
-        ),
-        .library(
-            name: "PSAMessaging",
-            targets: ["PSAMessaging"]
-        ),
-        .library(
-            name: "PSATracker",
-            targets: ["PSATracker"]
-        ),
-        .library(
-            name: "PSANotificationService",
-            targets: ["PSANotificationService"]
-        ),
-        .library(
-            name: "PSANotificationContent",
-            targets: ["PSANotificationContent"]
-        ),
-        // Convenience umbrella product
-        .library(
-            name: "PSAiOSSDK",
-            targets: ["PSACore", "PSAMessaging"]
-        ),
-    ],
-    dependencies: [
-        // FMDB for SQLite database support in PSATracker
-        .package(url: "https://github.com/ccgus/fmdb.git", from: "2.7.0"),
+        .library(name: "PSACore", targets: ["PSACore"]),
+        .library(name: "PSAMessaging", targets: ["PSAMessaging"]),
+        .library(name: "PSATracker", targets: ["PSATracker"]),
+        .library(name: "PSANotificationService", targets: ["PSANotificationService"]),
+        .library(name: "PSANotificationContent", targets: ["PSANotificationContent"]),
+        .library(name: "PSAiOSSDK", targets: ["PSACore", "PSAMessaging"]),
     ],
     targets: [
-        // Binary targets - XCFrameworks hosted on GitHub Releases
         .binaryTarget(
             name: "PSATracker",
-            url: "https://github.com/ProemSportsAnalytics/psa-ios-sdk-releases/releases/download/v1.0.2/PSATracker.xcframework.zip",
-            checksum: "7a422622f9ee0ec410bc05ec5dbdf27d5fefcea5b3db218beeaeba23cc952dec"
+            url: "https://github.com/ProemSportsAnalytics/psa-ios-sdk-releases/releases/download/v1.0.4/PSATracker.xcframework.zip",
+            checksum: "4ca356564f5244128ea3693e09f1030378b402eb625c7d3adc66205fa5437630"
         ),
         .binaryTarget(
             name: "PSACore",
-            url: "https://github.com/ProemSportsAnalytics/psa-ios-sdk-releases/releases/download/v1.0.2/PSACore.xcframework.zip",
-            checksum: "0d735da330cc1ece7e27585cf0b71fdce96de7d38e527868fad39bb0b81c1507"
+            url: "https://github.com/ProemSportsAnalytics/psa-ios-sdk-releases/releases/download/v1.0.4/PSACore.xcframework.zip",
+            checksum: "3b8d44b7adaef88d189955fb8202d2d1fb6767ab4a14f37f501341a8b2d5a226"
         ),
         .binaryTarget(
             name: "PSAMessaging",
-            url: "https://github.com/ProemSportsAnalytics/psa-ios-sdk-releases/releases/download/v1.0.2/PSAMessaging.xcframework.zip",
-            checksum: "3a458bbda46c3911ab7e1afb40a79ded55afb00908046b16f3c15684ee541313"
+            url: "https://github.com/ProemSportsAnalytics/psa-ios-sdk-releases/releases/download/v1.0.4/PSAMessaging.xcframework.zip",
+            checksum: "c6ed655b7a365bf00a574fab64d0ecb18384d39867e01b844d45050bb51d3a9d"
         ),
         .binaryTarget(
             name: "PSANotificationService",
-            url: "https://github.com/ProemSportsAnalytics/psa-ios-sdk-releases/releases/download/v1.0.2/PSANotificationService.xcframework.zip",
-            checksum: "23bcf528f965f9f2ba9a46dd89767531c253bf18394fb7dedd3026699f34ff66"
+            url: "https://github.com/ProemSportsAnalytics/psa-ios-sdk-releases/releases/download/v1.0.4/PSANotificationService.xcframework.zip",
+            checksum: "7e1ed27b80dd1e5e283ec68cb586969c176862f75d1b59655b96bd612eafc509"
         ),
         .binaryTarget(
             name: "PSANotificationContent",
-            url: "https://github.com/ProemSportsAnalytics/psa-ios-sdk-releases/releases/download/v1.0.2/PSANotificationContent.xcframework.zip",
-            checksum: "c1ac646053fedc0e5db2288820859ef47919a80e7e21204eacb26f07d4cc3a86"
+            url: "https://github.com/ProemSportsAnalytics/psa-ios-sdk-releases/releases/download/v1.0.4/PSANotificationContent.xcframework.zip",
+            checksum: "240e1aa588f43b99ddaac63f5cefadcc27a72a0fa74d2672b2e63d2c62e7429d"
         ),
-    ],
-    swiftLanguageVersions: [.v5]
+    ]
 )
